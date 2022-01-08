@@ -13,14 +13,15 @@ const Header = () => {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 30,
+        marginTop: 40,
     },
     logo: {
-        width: 10,
-        height: 5,
+        width: 15,
+        height: 10,
     },
     bg: {
         backgroundColor: 'green',
+        padding: 6,
     }
 })
 

@@ -32,11 +32,11 @@ const styles = StyleSheet.create({
         color: 'green',
     },
     products: {
-        width: 120, 
+        width: 300, 
         height: 150,
         marginLeft: 16,
         borderWidth: 2,
-        borderRadius: 4,
+        borderRadius: 10,
     },
     productTitle:{
         fontSize: 20,

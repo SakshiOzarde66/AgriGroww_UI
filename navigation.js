@@ -5,6 +5,7 @@ import SplashScreen from './screens/SplashScreen/SplashScreen';
 import LoginScreen from './screens/LoginScreen/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen/RegisterScreen';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
+import ProductScreen from './screens/ProductScreen/ProductScreen';
 
 
 const Stack = createStackNavigator()
@@ -16,13 +17,15 @@ const screenOptions = {
 const SignedInStack = () => (
     <NavigationContainer>
         <Stack.Navigator
-            initialRouteName='HomeScreen'
+            initialRouteName='SplashScreen'
             screenOptions={screenOptions}
         >
             <Stack.Screen name = 'SplashScreen' component = {SplashScreen} />
             <Stack.Screen name = 'LoginScreen' component = {LoginScreen} />
             <Stack.Screen name = 'RegisterScreen' component = {RegisterScreen} />
             <Stack.Screen name = 'HomeScreen' component = {HomeScreen} />
+            <Stack.Screen name = 'ProductScreen' component = {ProductScreen} />
+
         </Stack.Navigator>
     </NavigationContainer>
 )
