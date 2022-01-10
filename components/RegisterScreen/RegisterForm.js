@@ -82,7 +82,7 @@ const RegisterForm = ({ navigation }) => {
                     />
                 </View>
                 <Pressable style={styles.button(isValid)}
-                            onPress={handleSubmit}>
+                            onPress={() => navigation.navigate('LoginScreen')}>
                     <Text style={styles.buttonText}>SignUp</Text>
                 </Pressable>
                 <View style={styles.logincontainer}>

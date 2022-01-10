@@ -21,7 +21,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-              initialRouteName='HomeScreen'
+              initialRouteName='SplashScreen'
               screenOptions={screenOptions}
           >
           <Stack.Screen name = 'SplashScreen' component = {SplashScreen} />

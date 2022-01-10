@@ -20,7 +20,8 @@ const ProductsList = ({ list , navigation }) => {
                                     <Text style={styles.listquantity}>{list.quantity}</Text>
                                 </View>
                                 <Text style={styles.listPrize}>{list.product_prize}</Text>
-                            </View>   
+                            </View>  
+                            <Text></Text> 
                             <View style={styles.btnfield}>
                                 <Text></Text>
                                 <Pressable style={styles.button}
@@ -46,10 +47,10 @@ const styles = StyleSheet.create({
     image:{
         width: 150, 
         height: 150,
-        marginLeft: 10,
+        marginLeft: 4,
         borderWidth: 2,
         backgroundColor: 'black',
-        borderRadius: 10,
+        // borderRadius: 10,
     },
     txtnimg: {
         flexDirection: 'row',
@@ -57,8 +58,8 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent:'space-between',
         backgroundColor: '#D5E5CF',
-        borderRadius: 10,
-        padding: 5,
+        // borderRadius: 10,
+        padding: 15,
     },
     txtnprize:{
         justifyContent:'space-between',
@@ -66,6 +67,7 @@ const styles = StyleSheet.create({
         textAlign:'left',
         // paddingLeft: 25,
         paddingTop: 5,
+        marginLeft: -25,
     },
     listTitle:{
         fontSize: 20,
@@ -75,12 +77,11 @@ const styles = StyleSheet.create({
         fontSize: 15,
     },
     listPrize: {
-        fontSize: 21,
+        fontSize: 17,
         color: 'green',
     },
     txtnbtn:{
         flexDirection: 'row',
-        // justifyContent: 'space-evenly',
         backgroundColor: '#D5E5CF',//'#B5BBB3',//',
         marginRight: 10,
         // margin: 20,
@@ -89,10 +90,11 @@ const styles = StyleSheet.create({
     },
     button:{
         // color: 'green',
-        padding: 5,
-        marginRight: 20,
+        padding: 8,
+        // marginRight: 6,
         backgroundColor: 'green',
-        // justifyContent: 'flex-end',
+        borderRadius: 5,
+        justifyContent: 'space-evenly',
     },
     buttonText:{
         color: 'white',

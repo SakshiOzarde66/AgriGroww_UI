@@ -1,15 +1,16 @@
 import React from 'react';
-import { ScrollView, View, StyleSheet, Text } from 'react-native';
+import { ScrollView, View, StyleSheet, Text, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import DetailsProduct from '../../components/DetailsScreen/DetailsProduct';
 
-const DetailsScreen = () => {
+const DetailsScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <ScrollView>
                 <View style={styles.titlecontainer}>
-                    <Text style={styles.title}> Details </Text>
+                    <Text style={styles.title}> Details </Text>    
                 </View>
-                {/* <ProductsList list={list}/> */}
+                <DetailsProduct navigation={navigation} />
             </ScrollView>    
         </View>
     );
@@ -21,7 +22,8 @@ const styles = StyleSheet.create({
     },
     titlecontainer:{
         backgroundColor: 'green',
-        marginTop: 20,
+        marginTop: 35,
+        borderRadius: 10,
     },
     title:{
         fontWeight: 'bold',
@@ -32,6 +34,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         margin: 20,
     },
+    // back:{
+    //     width:50,
+        
+    // },
 })
 
 export default DetailsScreen;

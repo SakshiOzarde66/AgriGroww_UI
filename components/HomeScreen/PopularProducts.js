@@ -27,11 +27,11 @@ const PopularProducts = () => {
                 {POPULARPRODUCTS.map((posts, index) => (
                     <View key={index}>
                         <Image source={{uri: posts.imageUrl}} style={styles.post}/>
-                        <View style={styles.title}>
-                            <Text style={styles.postTitle}>{posts.product}</Text>
-                            <Text style={styles.postQuantity}>{posts.quantity}</Text>
-                        </View>
-                        <Text style={styles.postPrize}>{posts.prize}</Text>
+                            <View style={styles.title}>
+                                <Text style={styles.postTitle}>{posts.product}</Text>
+                                <Text style={styles.postQuantity}>{posts.quantity}</Text>
+                            </View>
+                            <Text style={styles.postPrize}>{posts.prize}</Text>
                     </View>    
                 ))}
 
@@ -61,34 +61,22 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     postTitle:{
-        fontSize: 17,
-        marginLeft: 17,
-        // alignItems: 'center',
-        // justifyContent: 'center',
-        // textAlign: 'center',
-        // backgroundColor: 'green',
-        // color: 'white',
+        fontSize: 22,
+        marginLeft: 20,
         color: 'black',
         padding: 5,
     },
     postQuantity:{
-        fontSize: 17,
+        fontSize: 15,
         marginLeft: 17,
-        // alignItems: 'center',
-        // justifyContent: 'center',
-        // textAlign: 'center',
-        // backgroundColor: 'green',
-        // color: 'white',
-        color: 'black',
         padding: 5,
+        color: 'gray',
     },
     postPrize:{
-        fontSize: 21,
+        fontSize: 17,
         marginLeft: 17,
         color: 'green',
         marginBottom: 5,
-        // backgroundColor: 'green',
-        // color: 'white',
         padding: 5,
         marginBottom: 40,
     }
