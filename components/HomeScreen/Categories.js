@@ -5,7 +5,7 @@ import { CATEGORIES } from '../../data/categories';
 const Categories = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.titleC}>Categories</Text>
+            {/* <Text style={styles.titleC}>Categories</Text> */}
             <ScrollView
              horizontal
              showsHorizontalScrollIndicator={false}
@@ -23,7 +23,7 @@ const Categories = () => {
 
 const styles = StyleSheet.create({
     container:{
-        marginTop: 6,
+        marginTop: 15,
     },
     titleC:{
         margin: 18,
@@ -33,11 +33,11 @@ const styles = StyleSheet.create({
         color: 'green',
     },
     categories: {
-        width: 150, 
-        height: 150,
-        marginLeft: 16,
+        width: 410, 
+        height: 220,
+        marginLeft: 10,
         borderWidth: 2,
-        borderRadius: 10,
+        // borderRadius: 10,
     },
 })
 export default Categories;

@@ -5,7 +5,7 @@ import { SOMEPRODUCTS } from '../../data/homescroll';
 const SomeProducts = () => {
     return (
         <View style={{marginBottom: 13}}>
-            <Text style={styles.titleSP}>Some Products</Text>
+            <Text style={styles.titleSP}>Shop By Categories</Text>
             <ScrollView
              horizontal
              showsHorizontalScrollIndicator={false}
@@ -14,7 +14,7 @@ const SomeProducts = () => {
                     <View key={index} >
                         <Image source={{uri: products.image}} style={styles.products}/>
                         <Text style={styles.productTitle}>{products.product}</Text>
-                        <Text style={styles.productPrize}>{products.prize}</Text>
+                        {/* <Text style={styles.productPrize}>{products.prize}</Text> */}
                     </View>    
                 ))}
 
@@ -26,21 +26,27 @@ const SomeProducts = () => {
 const styles = StyleSheet.create({
     titleSP:{
         margin: 18,
-        fontSize: 28,
+        fontSize: 23,
         fontWeight: 'bold',
         marginLeft: 10,
         color: 'green',
     },
     products: {
-        width: 300, 
+        width: 150, 
         height: 150,
         marginLeft: 16,
         borderWidth: 2,
-        borderRadius: 10,
+        // borderRadius: 10,
     },
     productTitle:{
-        fontSize: 20,
+        fontSize: 17,
         marginLeft: 17,
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        backgroundColor: 'green',
+        color: 'white',
+        padding: 2,
     },
     productPrize:{
         fontSize: 21,

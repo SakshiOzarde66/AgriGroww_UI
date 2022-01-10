@@ -2,12 +2,14 @@ import React from 'react';
 import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import ProductsList from '../../components/ProductScreen/ProductsList';
 
-const ProductScreen = ({list}) => {
+const ProductScreen = ({list , navigation}) => {
     return (
         <View style={styles.container}>
             <ScrollView>
-                <Text style={styles.title}> Products </Text>
-                <ProductsList list={list}/>
+                <View style={styles.titlecontainer}>
+                    <Text style={styles.title}> Products </Text>
+                </View>
+                <ProductsList navigation = {navigation} list={list}/>
             </ScrollView>    
         </View>
     );
@@ -15,16 +17,20 @@ const ProductScreen = ({list}) => {
 
 const styles = StyleSheet.create({
     container:{
-        margin: 10,
+        marginTop: 10,
+    },
+    titlecontainer:{
+        backgroundColor: 'green',
+        marginTop: 20,
     },
     title:{
         fontWeight: 'bold',
         alignItems: 'center',
         justifyContent: 'center',
         fontSize: 30,
-        color: 'green',
+        color: 'white',
         textAlign: 'center',
-        margin: 35,
+        margin: 20,
     },
 })
 

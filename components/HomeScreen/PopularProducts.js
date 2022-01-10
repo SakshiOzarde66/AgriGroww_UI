@@ -1,64 +1,97 @@
 import React from 'react';
-import { View, StyleSheet, Text, Image } from 'react-native';
+import { View, StyleSheet, Text, Image, ScrollView } from 'react-native';
+import { POPULARPRODUCTS } from '../../data/popularproducts';
 import { Divider } from 'react-native-elements';
 
-const PopularProducts = ({post}) => {
+const PopularProducts = () => {
     return (
-            <View style={styles.container}>
-                <Divider width={1} orientation='vertical'/>
-                <PostImage post={post}/>
-                <PostFooter post={post}/>
-            </View>
-    );
+        // <View>
+        //     {/* <Text style={styles.titlePP}>Latest Products</Text> */}
+        //     <ScrollView  horizontal
+        //      showsHorizontalScrollIndicator={false}
+        //     >
+        //         {POPULARPRODUCTS.map((post, index) => (
+        //             <View key={index}>
+        //                 <Image source={{uri: post.imageUrl}} style={styles.post}/>
+        //             </View>
+        //         ))}
+
+
+        //     </ScrollView>
+        // </View>
+        <View style={{marginBottom: 13}}>
+            <ScrollView
+             horizontal
+             showsHorizontalScrollIndicator={false}
+            >
+                {POPULARPRODUCTS.map((posts, index) => (
+                    <View key={index}>
+                        <Image source={{uri: posts.imageUrl}} style={styles.post}/>
+                        <View style={styles.title}>
+                            <Text style={styles.postTitle}>{posts.product}</Text>
+                            <Text style={styles.postQuantity}>{posts.quantity}</Text>
+                        </View>
+                        <Text style={styles.postPrize}>{posts.prize}</Text>
+                    </View>    
+                ))}
+
+            </ScrollView>
+        </View>
+    )
 }
 
-const PostImage = ({post}) => (
-    <View style={{width:'100%', height: 450}}>
-        <Image 
-            source={{uri: post.imageUrl}}
-            style={{height: '100%', resizeMode: 'cover'}}
-        />
-    </View>
-) 
-
-const PostFooter = ({post}) => (
-    <View>
-        <Text style={styles.postTitle}>{post.product}</Text>
-        <Text style={styles.postCaption}>{post.caption}</Text>
-        <Text style={styles.postPrize}>{post.prize}</Text>
-    </View>
-) 
-
-
-
 const styles = StyleSheet.create({
-    container:{
-        marginBottom: 40,
-    },
     titlePP:{
         margin: 18,
-        fontSize: 28,
+        fontSize: 23,
         fontWeight: 'bold',
         marginLeft: 10,
         color: 'green',
     },
-    postTitle: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginLeft: 10,
-        marginTop: 5,
-        color: 'green',
+    post:{
+        width: 190, 
+        height: 190,
+        marginLeft: 16,
+        borderWidth: 2,
+        // margin: 10,
+        // borderRadius: 10,
     },
-    postCaption: {
-        fontSize: 15,
-        marginLeft: 10,
+    title: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
-    postPrize: {
+    postTitle:{
         fontSize: 17,
-        fontWeight: 'bold',
-        marginLeft: 10,
+        marginLeft: 17,
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        // textAlign: 'center',
+        // backgroundColor: 'green',
+        // color: 'white',
+        color: 'black',
+        padding: 5,
     },
+    postQuantity:{
+        fontSize: 17,
+        marginLeft: 17,
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        // textAlign: 'center',
+        // backgroundColor: 'green',
+        // color: 'white',
+        color: 'black',
+        padding: 5,
+    },
+    postPrize:{
+        fontSize: 21,
+        marginLeft: 17,
+        color: 'green',
+        marginBottom: 5,
+        // backgroundColor: 'green',
+        // color: 'white',
+        padding: 5,
+        marginBottom: 40,
+    }
 })
-
 
 export default PopularProducts;

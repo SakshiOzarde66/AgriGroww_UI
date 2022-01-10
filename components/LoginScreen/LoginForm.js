@@ -62,7 +62,7 @@ const LoginForm = ({ navigation }) => {
                     />
                 </View>
                 <Pressable style={styles.button(isValid)}
-                            onPress={handleSubmit}>
+                            onPress={() => navigation.navigate('HomeScreen')}>
                     <Text style={styles.buttonText}>Login</Text>
                 </Pressable>
                 <View style={styles.signupcontainer}>

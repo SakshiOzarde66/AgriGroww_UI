@@ -33,7 +33,7 @@ const RegisterForm = ({ navigation }) => {
                 ]}>
                     <TextInput
                         placeholderTextColor = '#444'
-                        placeholder='Phone number or email'
+                        placeholder='E-mail'
                         autoCapitalize='none'
                         keyboardType='email-address'
                         textContentType='emailAddress'
