@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, StyleSheet, Text, ScrollView, Image } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import BottomTabs, {bottomTabIcons}  from '../../components/HomeScreen/BottomTabs';
 import ProductsList from '../../components/ProductScreen/ProductsList';
 
 const ProductScreen = ({list , navigation}) => {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <ScrollView>
                 <View style={styles.titlecontainer}>
                     {/* <Image 
@@ -16,8 +17,8 @@ const ProductScreen = ({list , navigation}) => {
                 </View>
                 <ProductsList navigation = {navigation} list={list}/>
             </ScrollView>   
-            <BottomTabs icons={bottomTabIcons}/> 
-        </View>
+            {/* <BottomTabs icons={bottomTabIcons}/>  */}
+        </SafeAreaView>
     );
 }
 
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
     },
     titlecontainer:{
         backgroundColor: 'green',
-        marginTop: 35,
+        // marginTop: 35,
         borderRadius: 10,
         flexDirection: 'row',
         justifyContent: 'space-around',

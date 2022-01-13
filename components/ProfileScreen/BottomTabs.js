@@ -27,11 +27,11 @@ export const bottomTabIcons = [
 ]
 
 const BottomTabs = ({ icons }) => {
-    const [activeTab, setActiveTab] = useState('Home')
+    const [activeTab, setActiveTab] = useState('User')
 
     const Icon = ({ icon }) => (
         <TouchableOpacity onPress={() => setActiveTab(icon.icon_name)}>
-            <Image source={{uri: activeTab === icon.icon_name ? icon.active : icon.inactive}} style={styles.icon}/>
+            <Image source={{uri: activeTab == icon.icon_name ? icon.active : icon.inactive}} style={styles.icon}/>
         </TouchableOpacity>
     )
 

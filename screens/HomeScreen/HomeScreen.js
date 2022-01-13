@@ -1,13 +1,17 @@
 import React from 'react';
-import { SafeAreaView, ScrollView, Text, StyleSheet, View, TouchableOpacity } from 'react-native';
+import { ScrollView, Text, StyleSheet, View, TouchableOpacity } from 'react-native';
 import BottomTabs, {bottomTabIcons} from '../../components/HomeScreen/BottomTabs';
 import Categories from '../../components/HomeScreen/Categories';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../../components/HomeScreen/Header';
 import PopularProducts from '../../components/HomeScreen/PopularProducts';
 import SomeProducts from '../../components/HomeScreen/SomeProducts';
 import { POPULARPRODUCTS } from '../../data/popularproducts';
+import Tabs from '../../tabs.js';
 
 const HomeScreen = ({navigation}) => {
+    // console.log(HomeScreen)
+
     return (
         <SafeAreaView style = {{flex : 1, position : 'relative'}}>
             <ScrollView>
@@ -28,7 +32,9 @@ const HomeScreen = ({navigation}) => {
                 </View> 
                 
             </ScrollView>    
-            <BottomTabs icons={bottomTabIcons}/>
+            {/* <BottomTabs icons={bottomTabIcons}/> */}
+            {/* <Tabs /> */}
+            {/* <BottomNavigation />  */}
         </SafeAreaView>
     );
 }

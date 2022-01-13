@@ -22,9 +22,8 @@ const DetailsProduct = ({navigation}) => {
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
                 </Text>
             </View>
-            {/* add: add to cart screen*/}
             <Pressable style={styles.button}
-                onPress={() => navigation.navigate('HomeScreen')}> 
+                onPress={() => navigation.navigate('CartScreen')}> 
                 <Text style={styles.buttonText}> Add to Cart </Text>
             </Pressable> 
         </View>
@@ -53,7 +52,8 @@ const styles = StyleSheet.create({
     },
     quantity:{
         fontSize: 15,
-        marginTop: -14,
+        marginTop: -20,
+        marginLeft: 5,
         flexDirection: 'row',
         color: 'gray',
     },

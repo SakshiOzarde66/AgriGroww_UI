@@ -5,14 +5,14 @@ import DetailsProduct from '../../components/DetailsScreen/DetailsProduct';
 
 const DetailsScreen = ({navigation}) => {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <ScrollView>
                 <View style={styles.titlecontainer}>
                     <Text style={styles.title}> Details </Text>    
                 </View>
                 <DetailsProduct navigation={navigation} />
             </ScrollView>    
-        </View>
+        </SafeAreaView>
     );
 }
 
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     },
     titlecontainer:{
         backgroundColor: 'green',
-        marginTop: 35,
+        // marginTop: 35,
         borderRadius: 10,
     },
     title:{

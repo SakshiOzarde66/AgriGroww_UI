@@ -13,7 +13,7 @@ const Header = () => {
 
 const styles = StyleSheet.create({
     container: {
-        // marginTop: 40,
+        marginTop: 1,
     },
     logo: {
         // width: 15,

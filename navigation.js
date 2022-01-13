@@ -6,6 +6,11 @@ import RegisterScreen from './screens/RegisterScreen/RegisterScreen';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import ProductScreen from './screens/ProductScreen/ProductScreen';
 import DetailsScreen from './screens/DetailsScreen/DetailsScreen';
+import ThankyouScreen from './screens/ThankyouScreen/ThankyouScreen'
+import ProfileScreen from './screens/ProfileScreen/ProfileScreen'
+import CheckOutScreen from './screens/CheckOutScreen/CheckOutScreen'
+import CartScreen from './screens/CartScreen/CartScreen.js';
+import UserScreen from './screens/UserScreen/UserScreen.js';
 
 const Stack = createStackNavigator()
 
@@ -24,6 +29,12 @@ const SignedInStack = () => (
         <Stack.Screen name = 'HomeScreen' component = {HomeScreen} />
         <Stack.Screen name = 'ProductScreen' component = {ProductScreen} />
         <Stack.Screen name = 'DetailsScreen' component = {DetailsScreen} />
+        <Stack.Screen name = 'CartScreen' component = {CartScreen} />
+        <Stack.Screen name = 'UserScreen' component = {UserScreen} />
+        <Stack.Screen name = 'ThankyouScreen' component = {ThankyouScreen}/>
+        <Stack.Screen name = 'ProfileScreen' component = {ProfileScreen}/>
+        {/* <Stack.Screen name = 'CartScreen' component = {CartScreen}/> */}
+        <Stack.Screen name = 'CheckOutScreen' component = {CheckOutScreen}/>
     </Stack.Navigator>
 )
 

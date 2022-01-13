@@ -1,14 +1,14 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import { View, StyleSheet, ScrollView, Image, Text, Pressable } from 'react-native';
+import { View, StyleSheet, ScrollView, Image, Text, Pressable, TouchableOpacity } from 'react-native';
 import { Button } from 'react-native-elements/dist/buttons/Button';
-import { PRODUCTS } from '../../data/product';
+import { Carts } from '../../data/cart';
 
-const ProductsList = ({ list , navigation }) => {
+const CartsList = ({ list , navigation }) => {
     return (
         <View style={styles.container}>
             {/* <ScrollView> */}
-                {PRODUCTS.map((list, index) => (
+                {Carts.map((list, index) => (
                     <View key={index}  style={styles.txtnimg}>
                         <View>
                             <Image source={{uri: list.imageUrl}} style={styles.image}/>
@@ -21,13 +21,22 @@ const ProductsList = ({ list , navigation }) => {
                                 </View>
                                 <Text style={styles.listPrize}>{list.product_prize}</Text>
                             </View>  
-                            <Text></Text> 
                             <View style={styles.btnfield}>
                                 <Text></Text>
-                                <Pressable style={styles.button}
-                                    onPress={() => navigation.navigate('DetailsScreen')}>  
-                                    <Text style={styles.buttonText}>Add to Cart</Text>
+                                <Pressable style={styles.button}>
+                                    <TouchableOpacity>
+                                    <Text style={styles.buttonText}>+</Text>
+                                    </TouchableOpacity>
                                 </Pressable>
+                            </View>    
+                            <Text style={styles.listNumber}>1</Text>
+                            <View style={styles.btnfield}>
+                                <Text></Text>
+                                <Pressable style={styles.button}>
+                                <TouchableOpacity>
+                                <Text style={styles.buttonText}>-</Text>
+                                </TouchableOpacity>
+                                </Pressable>    
                                 <Text></Text>
                             </View>
                             
@@ -43,13 +52,13 @@ const ProductsList = ({ list , navigation }) => {
 const styles = StyleSheet.create({
     container:{
         margin: 5,
-        marginBottom: 55,
     },
     image:{
         width: 150, 
         height: 150,
         marginLeft: 4,
-        borderWidth: 2,
+        borderWidth: 1,
+        borderRadius: 10,
         backgroundColor: 'black',
         // borderRadius: 10,
     },
@@ -57,36 +66,45 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginTop: 8,
         width: '100%',
-        justifyContent:'space-between',
+        justifyContent:'space-around',
         backgroundColor: '#D5E5CF',
         // borderRadius: 10,
-        padding: 15,
+        padding: 10,
     },
     txtnprize:{
         justifyContent:'space-between',
         padding: 25,
         textAlign:'left',
-        // paddingLeft: 25,
+        paddingLeft: 25,
         paddingTop: 5,
         marginLeft: -25,
     },
     listTitle:{
         fontSize: 20,
-        paddingTop: 5,
     },
     listquantity:{
         fontSize: 15,
+        paddingTop: 10,
     },
     listPrize: {
-        fontSize: 17,
+        fontSize: 14,
+        paddingTop: 10,
+
         color: 'green',
+    },
+    listNumber: {
+        padding: 2,
+        marginTop: 20,
+        marginLeft: 10,
+        borderRadius: 5,
+
     },
     txtnbtn:{
         flexDirection: 'row',
         backgroundColor: '#D5E5CF',//'#B5BBB3',//',
         marginRight: 10,
-        // margin: 20,
-        // padding: 5,
+        margin: 20,
+        padding: 10,
         marginLeft: 12,
     },
     button:{
@@ -95,15 +113,15 @@ const styles = StyleSheet.create({
         // marginRight: 6,
         backgroundColor: 'green',
         borderRadius: 5,
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-around',
     },
     buttonText:{
         color: 'white',
         fontSize: 16,
     },
     btnfield:{
-        justifyContent:'space-around',
+        marginLeft: 15,
     },
 })
 
-export default ProductsList;
+export default CartsList;
